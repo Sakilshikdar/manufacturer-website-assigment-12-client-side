@@ -1,0 +1,23 @@
+.last-section{  
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.884);
+  }
+  .app-store img{
+  width: 30px;
+  }
+
+  @media screen and (max-width: 576px) {
+    .last-section{
+        width: 100%;
+    }
+    .service-section{
+      padding-right: 50px;
+    }
+    .contract-section{
+      padding-right: 50px;
+      padding-top: 0 !important;
+    }
+    .icon{
+      display: none;
+    }
+}

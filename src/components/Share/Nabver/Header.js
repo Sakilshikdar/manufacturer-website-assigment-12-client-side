@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Nav, Navbar} from 'react-bootstrap';
 import { signOut } from 'firebase/auth';
-import logo from '../../image/house.ico'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
