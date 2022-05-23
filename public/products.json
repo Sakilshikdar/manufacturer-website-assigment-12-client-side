@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "img": "https://c1.neweggimages.com/ProductImage/A08CS220413C4g4q.jpg",
+      "name": "Skytech Azure Gaming PC Desktop",
+      "price": 100,
+      "description": "A safer and easier filmmaking experience is ensured by professional magnetic steel motor.Very good and metal body.",
+      "minimum": 20,
+      "available": 2000
+    },
+    {
+      "id": 2,
+      "img": "https://c1.neweggimages.com/ProductImage/14-932-459-V11.jpg",
+      "name": "GeForce RTX 3080 Graph card",
+      "price": 200,
+      "description": "Model: Speedster QICK 210 AMD Radeon RX 6500 XT BLACK.Game Clock: Up to 2685 Mhz .Boost Clock: Up to 2825 Mhz,Memory Clock Speed: 18 Gbps.AMD RDNA 2 architecture.",
+      "minimum": 30,
+      "available": 10000
+    },
+    {
+      "id": 3,
+      "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/20-147-804-V07.jpg",
+      "name": " Internal Solid State Drive SSD",
+      "price": 300,
+      "description": "PGRADE TO IMPRESSIVE NVMe SPEED Whether you need a boost for gaming or a seamless workflow for heavy graphics, the 980 is a smart choice for outstanding SSD performance.",
+      "minimum": 200,
+      "available": 3000
+    },
+    {
+      "id": 4,
+      "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/12-816-012-07.jpg",
+      "name": "Skytech Azure Gaming Cable",
+      "price": 30,
+      "description": "2 Male DVI-D Dual Link connectors. It connects DVI (Digital Video Interface) equipped computer to display, monitor, TV or projector with DVI-D Dual Link for video signal transmission.",
+      "minimum": 300,
+      "available": 5000
+    },
+    {
+      "id": 5,
+      "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/12-816-004-S01.jpg",
+      "name": "Nippon Labs HDMI-HS-15 15 ft. HDMI 2.0",
+      "price": 60,
+      "description": "A safer and easier filmmaking experience is ensured by professional magnetic steel motors with improved algorithms and a bigger Cable.",
+      "minimum": 400,
+      "available": 8000
+    },
+    {
+      "id": 6,
+      "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/12-119-879-Z01.jpg",
+      "name": "Rosewill RCDC-17005 6 ft. HDMI Cable ",
+      "price": 80,
+      "description": "High-Resolution Adapter: The cable supports DisplayPort 1.2 and 4 lanes and Display 1.2a input and HDMI 1.4b output. It also supports HDMI's highest video resolution, 4k x 2k, 3840 x 2160, and HD 1080p resolution.",
+      "minimum": 200,
+      "available": 9000
+    },
+    {
+      "id": 7,
+      "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/23-129-045-21.jpg",
+      "name": "Devastator II LED Gaming Keyboard and Mouse",
+      "price": 500,
+      "description": "Mem-chanical switches that feels like mechanical switches.Blue LED,backlighting.Laser-etched keys.Compatible custom keycaps,Precision optical sensor.",
+      "minimum": 200,
+      "available": 6000
+    },
+    {
+      "id": 8,
+      "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/26-193-124-02.jpg",
+      "name": "Rosewill NEON M59 RGB Gaming Mouse",
+      "price": 500,
+      "description": "MErgonomic Hand Grips,6 Programmable Buttons.Polling Rate up to 1000 Hz.Customization via software suite 11. Dynamic RGB Backlight Effects.",
+      "minimum": 800,
+      "available": 7000
+    }
+  ]

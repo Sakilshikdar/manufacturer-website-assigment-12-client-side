@@ -6,12 +6,14 @@ import Login from './components/Login/Login/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Register from './components/Login/Register/Register';
+import Home from './components/Share/Home/Home';
 
 function App() {
   return (
     <div className='mx-6'>
       <Header></Header>
       <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/about' element={<Register></Register>}></Route>

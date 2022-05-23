@@ -1,0 +1,15 @@
+.storage{
+    background-color: #007cba;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 576px) {
+    .storage{
+        grid-template-columns:repeat(1, 1fr);
+    }
+    .para{
+        padding-left: 20px ;
+        padding-top: 0px !important;
+    }
+}

@@ -1,0 +1,32 @@
+.home{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color:#007cba;
+}
+.details{
+    order: 1;
+    margin-left: 50px;
+    justify-content: center;
+}
+.img{
+    order: 2;
+    margin-left: 150px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .home{
+        grid-template-columns:repeat(1, 1fr);
+        /* width: 440px; */
+    }
+    .details{
+        order: 2;
+        margin-left: 50px;
+    }
+    .img{
+        order: 1;
+        margin-left: 50px;
+        padding: 0px;
+        /* margin: 0; */
+    }
+}
