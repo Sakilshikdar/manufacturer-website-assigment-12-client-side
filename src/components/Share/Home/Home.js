@@ -1,15 +1,19 @@
 import React from 'react';
 import OurPackage from '../../ExtraPart/OurPackage/OurPackage';
+import Storage from '../../ExtraPart/Storage/Storage';
 import Banner from '../../Home/Banner/Banner';
+import Summary from '../../Home/Sumary';
+import Products from '../../Products/products/Products'
 import Footer from '../Footer/Footer';
 import './Home.css'
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            {/* <Products></Products> */}
+            <Products></Products>
+            <Summary></Summary>
             <OurPackage></OurPackage>
-            {/* <Storage></Storage> */}
+            <Storage></Storage>
             <Footer></Footer>
         </div>
     );

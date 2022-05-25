@@ -42,7 +42,8 @@ const Register = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-      createUserWithEmailAndPassword(email, password);
+    const name = event.target.name.value;
+      createUserWithEmailAndPassword(name,email, password);
       handleVerification()
   };
 
