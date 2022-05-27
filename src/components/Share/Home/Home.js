@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewsDetails from '../../Dashboard/ReviewsDetails';
 import OurPackage from '../../ExtraPart/OurPackage/OurPackage';
 import Storage from '../../ExtraPart/Storage/Storage';
 import Banner from '../../Home/Banner/Banner';
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <Products></Products>
             <Summary></Summary>
+            <ReviewsDetails></ReviewsDetails>
             <OurPackage></OurPackage>
             <Storage></Storage>
             <Footer></Footer>

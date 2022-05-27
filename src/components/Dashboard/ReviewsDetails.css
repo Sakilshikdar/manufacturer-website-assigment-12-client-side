@@ -1,0 +1,12 @@
+.rating-icon{
+    font-size: 12px;
+    color: goldenrod;
+    margin-left: 2px;
+    
+}
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}

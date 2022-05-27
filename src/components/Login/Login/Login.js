@@ -1,22 +1,14 @@
-import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './Login.css'
-import newIcon from '../../../images/add-user.ico'
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useEffect } from 'react';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useForm } from "react-hook-form";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Loading from '../../Share/Loading/Loading';
 import auth from '../../../firebase.init';
-import Social from '../../Hooks/Social';import { toast } from 'react-toastify';
-;
+import useToken from '../../Hooks/useToken';
 
 const Login = () => {
-    const emailRef = useRef('');
-    const passwordRef = useRef('');
-    const navigate = useNavigate();
-    const location = useLocation();
-   
-
-    let from = location.state?.from?.pathname || "/";
-
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -24,69 +16,100 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [token] = useToken(user || gUser)
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    let signInError;
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
-    const handleSubmit = event => {
-        event.preventDefault();
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
-    }
-
-    const handleRegister = () => {
-        navigate('/register')
-
-    }
-
-    const resetPassword = async () => {
-        const email = emailRef.current.value;
-        if(email){
-            await sendPasswordResetEmail(email);
-        toast('Sent email');
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
         }
-        else{
-            toast('Enter your Email Address')
-        }
+    }, [token, from, navigate])
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    }
+
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password);
     }
 
     return (
-        <div className='login mt-2 mx-auto'>
-            <h2 className='text-center text-primary  text-4xl'>Please login</h2>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required/>
-                </Form.Group>
+        <div className='flex h-screen justify-center items-center'>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
-                </Form.Group>
-                <Button className='d-block mx-auto w-50 mb-2' variant="primary" type="submit">
-                    Login
-                </Button>
-                <div className=' d-flex text-center'>
-                    <div>
-                        <img className='mx-1 w-7' src={newIcon} alt="" />
-                    </div>
-                    <div>
-                        New to Genius car?
-                        <span style={{ cursor: "pointer" }} className='text-primary' onClick={handleRegister}>Please Register</span>
-                    </div>
-                    </div>
-                <div >
-                    Forget password?
-                    <span style={{ cursor: "pointer" }} className='text-primary' onClick={resetPassword}>Reset password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid Email'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            </label>
+                        </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'Password is Required'
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Must be 6 characters or longer'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            </label>
+                        </div>
+
+                        {signInError}
+                        <input className='btn w-full max-w-xs text-black' type="submit" value="Login" />
+                    </form>
+                    <p><small>New to Tool manufacturer <Link className='text-primary' to="/register">Create New Account</Link></small></p>
+                    <div className="divider">OR</div>
+                    <button
+                        onClick={() => signInWithGoogle()}
+                        className="btn btn-outline"
+                    >Continue with Google</button>
                 </div>
-                <Social></Social>
-            </Form>
-            
-        </div>
+            </div>
+        </div >
     );
 };
 
-export default Login;
+export default Login; 

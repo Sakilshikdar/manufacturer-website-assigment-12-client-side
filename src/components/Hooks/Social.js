@@ -2,8 +2,9 @@ import React from 'react';
 import logo1 from '../../images/social/google.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useNavigate, useParams,useLocation } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import Loading from '../Share/Loading/Loading'
+import useToken from './useToken';
 
 
 
@@ -12,10 +13,9 @@ const Social = () => {
     const location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-    const { id } = useParams();
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
+    const [token] = useToken(user)
 
     let errorElement;
     if (error) {
@@ -24,7 +24,7 @@ const Social = () => {
         </div>
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 

@@ -6,7 +6,7 @@ const Product = ({product}) => {
 
     return (
         <div className='service-container shadow-lg p-3 mb-5 bg-white rounded'>
-        <img style={{width:'200px'}} src={img} alt="" />
+        <img className='mx-auto' style={{width:'200px'}} src={img} alt="" />
         <h2>{name}</h2>
         <p>Price: {price}$</p>
         <h6 className='py-1'>Description: {description.slice(0, 100)}...</h6>
