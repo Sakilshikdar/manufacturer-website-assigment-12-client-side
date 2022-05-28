@@ -3,8 +3,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import Loading from '../Shared/Loading';
-import CheckoutForm from './CheckoutForm';
+import Loading from '../Share/Loading/Loading';
+import CheckoutForm from './CheckOut';
 
 const stripePromise = loadStripe('pk_test_51L1ApHGtFiAlPX1SOAeyZRcWXuG5k70O4OXUeK3oO15CETwMsX4e7F94lY4idzMwVUvqENdIwhJ8syi5aCbvnueh00K7mbDnMM');
 
