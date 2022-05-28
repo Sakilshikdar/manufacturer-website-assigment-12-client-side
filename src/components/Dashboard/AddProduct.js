@@ -5,6 +5,7 @@ const AddProduct = () => {
 
     const handleSubmit = (even) => {
         even.preventDefault();
+        even.target.reset();
         const product = {
             name: even.target.name.value,
             available: even.target.quantity.value,
@@ -29,7 +30,6 @@ const AddProduct = () => {
                 else {
                     toast('something wrong')
                 }
-                console.log(product);
             })
             
     }

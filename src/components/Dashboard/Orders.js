@@ -1,11 +1,13 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Orders = () => {
     const [user] = useAuthState(auth);
-    const [orders, setOrders] = useState([])
+    const [orders, setOrders] = useState([]);
+    const [update, setUpdate] = useState(false);
     const [products, setProducts] = useState([]);
     const [updated, setUpdated] = useState(false);
 
@@ -25,7 +27,8 @@ const Orders = () => {
                 return res.json()
             })
             .then(data => setOrders(data))
-    }, [user])
+        setUpdate(true)
+    }, [user, updated])
 
 
     const handleDelete = id => {
@@ -39,11 +42,11 @@ const Orders = () => {
                 .then(data => {
                     const remaining = products.filter(service => service._id !== id);
                     setProducts(remaining);
-                    setUpdated(updated)
+                    setUpdated(!updated)
 
                 })
         }
-    } 
+    }
 
     return (
         <div>
@@ -54,7 +57,8 @@ const Orders = () => {
                             <th></th>
                             <th>Name</th>
                             <th>quantity</th>
-                            <th></th>
+                            <th>Delete</th>
+                            <th>pay</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,15 +68,21 @@ const Orders = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.displayName}</td>
                                 <td>{order.quantity}</td>
-                                <td> <button
-                                    href="#" alt=''
-                                    className="btn btn-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                    onClick={() => handleDelete(order._id)}
-                                >
-                                    Delete
-                                </button></td>
+                                <td>
+                                    <button
+                                        href="#" alt=''
+                                        className="btn btn-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        onClick={() => handleDelete(order._id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                                <td>
+                                    {(order.quantity && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                </td>
                             </tr>
-                        )}
+                        )
+                        }
                     </tbody>
                 </table>
             </div>

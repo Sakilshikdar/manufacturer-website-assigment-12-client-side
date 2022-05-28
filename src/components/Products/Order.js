@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const Order = ({ product }) => {
-    console.log(product);
+const Order = () => {
     const [user, loading, error] = useAuthState(auth);
     const { displayName, email } = user;
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setProduct(data)});
+
+    }, [id]);
+
 
     const handleSubmit = (even) => {
         even.preventDefault();
+        even.target.reset()
         const booking = {
             phone: even.target.phone.value,
             quantity: even.target.quantity.value,
@@ -34,8 +47,6 @@ const Order = ({ product }) => {
             }
                 
             })
-            
-
     }
 
     return (
@@ -50,7 +61,7 @@ const Order = ({ product }) => {
 
                             <div>
                                 <h1 className='text-primary font-bold mb-2'>Quantity</h1>
-                                <input name='quantity' type="number" value={10} className="input input-bordered w-full" />
+                                <input name='quantity' type="number" value={product.minQuantity} className="input input-bordered w-full" />
                             </div>
 
                             <input name='name' type="text" value={user?.displayName} className="input input-bordered w-full " />

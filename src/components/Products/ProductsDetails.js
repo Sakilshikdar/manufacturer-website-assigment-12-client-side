@@ -5,7 +5,6 @@ const ProductsDetails = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
-
     useEffect(() => {
         const url = `http://localhost:5000/product/${id}`;
         fetch(url)

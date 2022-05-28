@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login/Login';
@@ -17,6 +16,8 @@ import RequireAdmin from './components/Login/RequireAuth/RequireAdmin';
 import Blogs from './components/Blogs/Blogs';
 import MyProfile from './components/Dashboard/MyProfile';
 import AddProduct from './components/Dashboard/AddProduct';
+import Portfolio from './components/Portfolio/Portfolio';
+import Payment from "././components/Dashboard/Payment";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/profile' element={<Portfolio></Portfolio>}></Route>
         <Route path='/purchase/:id' element={<RequireAuth>
           <Purchase />
         </RequireAuth>}>
@@ -40,6 +42,7 @@ function App() {
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='product' element={<AddProduct></AddProduct>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
 
         </Route>
