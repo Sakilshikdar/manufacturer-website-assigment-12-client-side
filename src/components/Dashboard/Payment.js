@@ -1,40 +1,47 @@
-import React, { useState } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import React from 'react';
+import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
+import Loading from '../Shared/Loading';
+import CheckoutForm from './CheckoutForm';
 
-const Cart = ({ product }) => {
-    const { _id, name, img, description, price, quantity, supplierName, sold } = product;
-    const [quantityNum, setQuantityNum] = useState(quantity);
+const stripePromise = loadStripe('pk_test_51L1ApHGtFiAlPX1SOAeyZRcWXuG5k70O4OXUeK3oO15CETwMsX4e7F94lY4idzMwVUvqENdIwhJ8syi5aCbvnueh00K7mbDnMM');
 
-    const handleQuantity = () => {
-        if (quantityNum > 0) {
-            setQuantityNum(preCount => preCount - 1)
+
+const Payment = () => {
+    const { id } = useParams();
+    const url = `http://localhost:5000/order/${id}`;
+    console.log(url);
+
+    const { data: detail, isLoading } = useQuery(['Order', id], () => fetch(url, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
-        fetch(`https://gentle-harbor-89262.herokuapp.com/product/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(quantityNum),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+    }).then(res => res.json()));
+
+    if (isLoading) {
+        return <Loading></Loading>
     }
     return (
-        <div className='service-container shadow-lg p-3 mb-5 bg-white rounded'>
-            <img style={{ width: '200px' }} src={img} alt="" />
-            <h2>{name}</h2>
-            <p>Price: {price}$</p>
-            <h6>Description: {description}...</h6>
-            <p>quantity: {quantityNum}</p>
-            <h6>supplier Name: {supplierName}</h6>
-            <p>Sold: {sold}</p>
-            <button onClick={() => handleQuantity(_id)} className='button border-3'>delivered</button>
+        <div>
+            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+                <div class="card-body">
+                    <p className="text-success font-bold">Hello, {detail.name}</p>
+                    <h2 class="card-title">Please Pay for {detail.service}</h2>
+                    <p>Please pay: ${detail.price}</p>
+                </div>
+            </div>
+            <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
+                <div class="card-body">
+                    <Elements stripe={stripePromise}>
+                        <CheckoutForm detail={detail} />
+                    </Elements>
+                </div>
+            </div>
         </div>
     );
 };
 
-export default Cart;
+export default Payment;
