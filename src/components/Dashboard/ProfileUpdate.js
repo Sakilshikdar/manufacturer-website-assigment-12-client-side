@@ -14,11 +14,11 @@ const ProfileUpdate = () => {
         fetch(url)
             .then(res => res.json())
             .then(data =>  { 
-                setUsers(data)
-            })
-            setUpdate(true)
+                setUpdate(true)
+            setUsers(data)
+                })
     }
-        , [users ,update]);
+        , [user,update]);
     return (
         <div class="card">
             <div class="lg:p-8">

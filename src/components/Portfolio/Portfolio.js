@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Portfolio = () => {
     return (
         <div className='text-center'>
@@ -17,22 +18,31 @@ const Portfolio = () => {
                 <div class="hero-content text-center">
                     <div class=" ">
                         <h1 className='text-4xl text-primary text-center'>About me</h1>
-                        <div class="py-6 w-75 d-flex row text-xl border-l-orange-700">
-                            Name: <span className=' ml-0'>Sakil</span>
-                            <br />
-                            <h1>Address: <span className='ml-60'>10/7 Ziya Road, Dhaka, Bangladesh.</span></h1>
-                            <br />
-                            Education: <span className=' ml-60'>bsc in cse</span>
+                        <div class="py-6 w-full text-xl border-l-orange-700">
+                            <h1 className=' text-success'>Name:Sakil</h1>
+                            <h1 className='py-2 text-success'>Address: 10/7 Ziya Road, Dhaka, Bangladesh.</h1>
+                            <h1 className='text-success'>Education: bsc in programming</h1>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* <div>
-                <h1 className='text-4xl mt-5 text-primary text-center'>About me</h1>
-            </div>
-            <div className='text-xl mt-4'>
-                Age: 20
-            </div> */}
+            <footer class="footer p-6 mb-10 bg-base-200 text-base-content">
+                <div className='lg:d-flex lg:ml-28 justify-center '>
+                    <div class="text-success badge badge-lg">HTML</div>
+                    <div class="text-success badge badge-lg">CSS</div>
+                    <div class="text-success badge badge-lg">BOOSTRAP</div>
+                </div>
+                <div className='lg:d-flex lg:justify-self-end justify-center lg:mr-64'>
+                    <div class="text-success badge badge-lg">REACT-BOOSTRAP</div>
+                    <div class="text-success badge badge-lg">TAILWIND CSS</div>
+                    <div class="text-success badge badge-lg">REACT-DAISYUI</div>
+                </div>
+                <div className='lg:d-flex mr-28  lg:justify-self-end'>
+                    <div class="text-success badge badge-lg">JAVASCRIPT</div>
+                    <div class="badge badge-lg text-success">REACT-JS</div>
+                    <div class="badge badge-lg text-success">MONGO-DB</div>
+                </div>
+            </footer>
         </div>
     );
 };
