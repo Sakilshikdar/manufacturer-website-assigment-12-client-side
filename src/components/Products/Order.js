@@ -27,6 +27,7 @@ const Order = () => {
             phone: even.target.phone.value,
             quantity: even.target.quantity.value,
             address: even.target.address.value,
+            price: even.target.price.value,
             displayName,
             email
         }
@@ -68,6 +69,7 @@ const Order = () => {
                             <input name='email' type="text" value={user?.email} className="input input-bordered w-full " />
                             <input name='phone' type="text" placeholder="Your Phone Number" className="input input-bordered w-full" />
                             <input name='address' type="text" placeholder="Your address" className="input input-bordered w-full" />
+                            <input name='price' type="text" placeholder="Your price" className="input input-bordered w-full" />
                             <input type="submit" value='submit' className="btn btn-secondary w-full" />
 
                         </form>
