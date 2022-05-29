@@ -1,4 +1,5 @@
 import React from 'react';
+import pic from '../../images/pic 2.png';
 
 
 const Portfolio = () => {
@@ -6,7 +7,8 @@ const Portfolio = () => {
         <div className='text-center'>
             <div class="hero mt-9 bg-base-200">
                 <div class="hero-content flex-col lg:flex-row-reverse">
-                    {/* <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" /> */}
+                    <img src={pic} 
+                    style={{width:"350px"}} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 class="text-5xl font-bold">Hello, I am sakil <br />Full Stack Developer</h1>
                         <p class="py-6">hey my name is sakil.I am a jonuior fullStack developer. <br /> I have much knowledge about webside Development.I love make webside.If you want hire me.</p>
@@ -17,7 +19,7 @@ const Portfolio = () => {
             <div class="hero bg-base-200">
                 <div class="hero-content text-center">
                     <div class=" ">
-                        <h1 className='text-4xl text-primary text-center'>About me</h1>
+                        <h1 className='text-4xl text-primary text-center  font-mono font-bold'>About me</h1>
                         <div class="py-6 w-full text-xl border-l-orange-700">
                             <h1 className=' text-success'>Name:Sakil</h1>
                             <h1 className='py-2 text-success'>Address: 10/7 Ziya Road, Dhaka, Bangladesh.</h1>
@@ -26,7 +28,9 @@ const Portfolio = () => {
                     </div>
                 </div>
             </div>
-            <footer class="footer p-6 mb-10 bg-base-200 text-base-content">
+            <h1 className='text-4xl text-primary bg-base-200 font-bold font-mono'>Skills</h1>
+            <div class="footer p-6 mb-10 bg-base-200 text-base-content">
+                
                 <div className='lg:d-flex lg:ml-28 justify-center '>
                     <div class="text-success badge badge-lg">HTML</div>
                     <div class="text-success badge badge-lg">CSS</div>
@@ -42,7 +46,7 @@ const Portfolio = () => {
                     <div class="badge badge-lg text-success">REACT-JS</div>
                     <div class="badge badge-lg text-success">MONGO-DB</div>
                 </div>
-            </footer>
+            </div>
         </div>
     );
 };

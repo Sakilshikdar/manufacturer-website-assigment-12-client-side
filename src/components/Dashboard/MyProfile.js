@@ -55,7 +55,7 @@ const MyProfile = () => {
                                     <input name='location' type="text" placeholder="Your location" className="input input-bordered w-full" />
                                     <input name='education' type="text" placeholder="Your education" className="input input-bordered w-full" />
                                     <input name='profile' type="text" placeholder="Your LinkedIn profile link" className="input input-bordered w-full" />
-                                    <input type="submit" value='submit' className="btn btn-secondary w-full" />
+                                    <input type="submit" value='update' className="btn btn-secondary w-full" />
 
                                 </form>
                             </div>

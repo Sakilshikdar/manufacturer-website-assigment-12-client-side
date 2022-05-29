@@ -5,7 +5,6 @@ import auth from '../../firebase.init';
 const ProfileUpdate = () => {
     const [users, setUsers] = useState({});
     const [user] = useAuthState(auth);
-    const [update, setUpdate] = useAuthState(false);
 
 
     useEffect(() => {
@@ -14,11 +13,10 @@ const ProfileUpdate = () => {
         fetch(url)
             .then(res => res.json())
             .then(data =>  { 
-                setUpdate(true)
             setUsers(data)
                 })
     }
-        , [user,update]);
+        , [user]);
     return (
         <div class="card">
             <div class="lg:p-8">

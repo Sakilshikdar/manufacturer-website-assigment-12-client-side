@@ -55,7 +55,7 @@ const Order = () => {
         <div class=" bg-base-200">
             <div class="hero-content flex-col lg:flex-row-reverse">
                 <div className='lg:ml-64'>
-                    <h1 >Place Your Order</h1>
+                    <h1 className='text-2xl font-bold text-primary'>Place Your Order</h1>
                 </div>
                 <div class="card  w-full max-w-sm shadow-2xl bg-base-100">
                     <div class="card-body">
@@ -71,7 +71,7 @@ const Order = () => {
                             <input name='phone' type="text" placeholder="Your Phone Number" className="input input-bordered w-full" />
                             <input name='address' type="text" placeholder="Your address" className="input input-bordered w-full" />
                             <input name='price' type="text" placeholder="Your price" className="input input-bordered w-full" />
-                            <input type="submit" value='submit' className="btn btn-secondary w-full" />
+                            <input type="submit" value='order' className="btn btn-secondary w-full" />
 
                         </form>
                     </div>
