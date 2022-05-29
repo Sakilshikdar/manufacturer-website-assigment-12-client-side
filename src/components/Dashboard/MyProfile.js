@@ -29,6 +29,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
+                    even.target.reset()
                     toast('update done')
                 }
                 else {

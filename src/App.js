@@ -18,6 +18,7 @@ import MyProfile from './components/Dashboard/MyProfile';
 import AddProduct from './components/Dashboard/AddProduct';
 import Portfolio from './components/Portfolio/Portfolio';
 import Payment from "././components/Dashboard/Payment";
+import ManageProduct from './components/Dashboard/ManageProduct';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path='review' element={<AddReview></AddReview>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='product' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageproducts' element={<ManageProduct></ManageProduct>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
 
