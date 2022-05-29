@@ -22,7 +22,6 @@ const Order = () => {
 
     const handleSubmit = (even) => {
         even.preventDefault();
-        even.target.reset()
         const booking = {
             phone: even.target.phone.value,
             quantity: even.target.quantity.value,
@@ -31,6 +30,7 @@ const Order = () => {
             displayName,
             email
         }
+        console.log(booking);
         fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
@@ -42,6 +42,7 @@ const Order = () => {
             .then(data => {
                 if(data.success){
                     toast('order done')
+                    even.target.reset()
                 }
             else{
                 toast('order not done')

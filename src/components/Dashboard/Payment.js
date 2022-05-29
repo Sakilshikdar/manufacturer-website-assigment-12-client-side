@@ -27,6 +27,7 @@ const Payment = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+   
     return (
         <div>
             <h1>please pay for : {id}</h1>

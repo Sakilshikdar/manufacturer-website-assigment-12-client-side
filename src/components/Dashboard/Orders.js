@@ -57,6 +57,7 @@ const Orders = () => {
                             <th></th>
                             <th>Name</th>
                             <th>quantity</th>
+                            <th>price</th>
                             <th>Delete</th>
                             <th>pay</th>
                         </tr>
@@ -68,6 +69,7 @@ const Orders = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.displayName}</td>
                                 <td>{order.quantity}</td>
+                                <td>{order?.price}</td>
                                 <td>
                                     <button
                                         href="#" alt=''
@@ -78,7 +80,8 @@ const Orders = () => {
                                     </button>
                                 </td>
                                 <td>
-                                    {(order.quantity && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(order.price && order.paid) && <span className='text-success'>paid</span>}
                                 </td>
                                 
                             </tr>
