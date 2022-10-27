@@ -2,20 +2,20 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='bg-opacity-25 mx-auto w-75 mt-3 shadow-lg p-3 mb-5 bg-white rounded'>
-            <div className='p-3'>
-                <h4 className='text-center text-2xl'>1. How will you improve the performance of a React Application?</h4>
+        <div className='bg-opacity-25 mx-auto w-100 lg:w-75 mt-3 shadow-lg p-3 mb-5 bg-white rounded'>
+            <div className='p-0 lg:p-3'>
+                <h4 className='text-center lg:text-2xl text-xl'>1. How will you improve the performance of a React Application?</h4>
                 <h6>A modern front-end library like React doesn't magically make your app faster. It requires the developer to understand how React works and how the components live through the various phases of the component lifecycle.Users interact with the UI and cause the data to change. Whether the interaction involves clicking a button, tapping on an image, dragging list items around, AJAX requests invoking APIs, etc., all those interactions only change the data. They never cause the UI to change directly.
                 </h6>
             </div>
             <div className='p-3'>
-                <h4 className='text-center text-2xl'>2. What are the different ways to manage a state in a React application?</h4>
+                <h4 className='text-center lg:text-2xl text-xl'>2. What are the different ways to manage a state in a React application?</h4>
                 <h6>The state is just a fancy term for a JavaScript data structure. If a user changes state by interacting with your application, the UI may look completely different afterwards, because it's represented by this new state rather than the old state.Hooks are backwards-compatible, which means it doesn't keep any breaking changes. React provides some built-in Hooks like useState, UseEffect and useReducer etc. You can also make custom hooks.
 
                 </h6>
             </div>
             <div className='p-3'>
-                <h4 className='text-center text-2xl'>3. How does prototypical inheritance work?</h4>
+                <h4 className='text-center lg:text-2xl text-xl'>3. How does prototypical inheritance work?</h4>
                 <h6>For instance, we have a user object with its properties and methods, and want to make admin and guest as slightly modified variants of it. We like to reuse what we have in user, not copy/reimplement its methods, just build a new object on top of it.Actually a super-important thing, because we may have a big object with many methods, and have objects that inherit from it. And when the inheriting objects run the inherited methods, they will modify only their own states, not the state of the big object.</h6>
             </div>
             <div className='p-3'>

@@ -1,16 +1,15 @@
 import React from 'react';
-import pic from '../../images/pic 2.png';
 
 
 const Portfolio = () => {
     return (
         <div className='text-center'>
-            <div className="hero mt-9 bg-base-200">
+            <div className="mt-9 bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src='https://i.ibb.co/BL5vP3k/312841081-648522170217665-6350485512454630423-n-removebg-preview.jpg' 
-                    style={{width:"350px"}} className="max-w-sm rounded-lg shadow-2xl" />
+                    style={{width:"350px"}} className="sm:ml-0 lg:ml-40  max-w-sm rounded-lg shadow-2xl" />
                     <div>
-                        <h1 className="text-5xl font-bold">Hello, I am sakil <br />Full Stack Developer</h1>
+                        <h1 className="text-5xl font-bold">Hello, I am sakil Full Stack Developer</h1>
                         <p className="py-6">hey my name is sakil.I am a jonuior fullStack developer. <br /> I have much knowledge about webside Development.I love make webside.If you want hire me.</p>
                         <a href='https://drive.google.com/file/d/1V1as-MXbaix8c7-oEjJYTiUIpHdwRgfv/view?usp=sharing' className="btn btn-primary text-white">Hire me</a>
                     </div>
