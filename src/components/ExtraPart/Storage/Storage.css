@@ -1,14 +1,8 @@
 .storage{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-@media screen and (max-width: 576px) {
-    .storage{
-        grid-template-columns:repeat(1, 1fr);
-    }
-    .para{
-        padding-left: 20px ;
-        padding-top: 0px !important;
-    }
+.storage_style{
+    background: linear-gradient(180deg, #FFFFFF 0.09%, #C9EFF1 100%);
 }

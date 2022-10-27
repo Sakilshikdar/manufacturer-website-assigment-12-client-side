@@ -12,7 +12,7 @@ const Orders = () => {
     const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${user?.email}`, {
+        fetch(`https://sleepy-shore-49038.herokuapp.com/order?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const Orders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://sleepy-shore-49038.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -50,16 +50,16 @@ const Orders = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>quantity</th>
-                            <th>price</th>
+                            <th>Location</th>
+                            <th>email</th>
                             <th>Delete</th>
-                            <th>pay</th>
+                            <th>edit</th>
                         </tr>
                     </thead>
                     <tbody>

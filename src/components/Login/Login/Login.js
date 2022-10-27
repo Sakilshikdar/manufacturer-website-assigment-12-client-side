@@ -5,6 +5,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Loading from '../../Share/Loading/Loading';
 import auth from '../../../firebase.init';
 import useToken from '../../Hooks/useToken';
+import './Login.css'
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -42,7 +43,7 @@ const Login = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='login_top flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Login</h2>
@@ -98,7 +99,7 @@ const Login = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs text-black' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs login_button' type="submit" value="Login" />
                     </form>
                     <p><small>New to Tool manufacturer <Link className='text-primary' to="/register">Create New Account</Link></small></p>
                     <div className="divider">OR</div>

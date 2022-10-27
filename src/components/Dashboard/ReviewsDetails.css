@@ -10,3 +10,6 @@
     align-items: center;
     color: red;
 }
+.card_design{
+    background: linear-gradient(to right, #5d839ca1, #6dd4fa7d);
+}

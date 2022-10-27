@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useToken from '../../Hooks/useToken';
-import { useLocation } from 'react-router-dom';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -45,7 +44,7 @@ const Register = () => {
         navigate('/');
     }
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='login_top flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Sign Up</h2>
@@ -121,7 +120,7 @@ const Register = () => {
                         </div>
 
                         {signInError}
-                        <input className='btn w-full max-w-xs text-black' type="submit" value="Sign Up" />
+                        <input className='btn login_button w-full max-w-xs text-black' type="submit" value="Sign Up" />
                     </form>
                     <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>

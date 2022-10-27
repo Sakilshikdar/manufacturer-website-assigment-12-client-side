@@ -11,24 +11,25 @@ const Footer = () => {
         <div className="footer row">
           <div className="p-5 col">
           <div className=" service-section ps-5">
-              <h4 className="text-white text-xl">Our Services</h4> 
-              <p className='text-white'>All Services</p>
-              <p className='text-white'>Cargo</p>
-              <p className='text-white'>Transport</p>
-              <p className='text-white'>storage</p>
+              <h4 className="text-black text-2xl font-bold">Our Services</h4> 
+              <p className='text-black text-xl'>All Services</p>
+              <p className='text-black text-xl'>Cargo</p>
+              <p className='text-black text-xl'>Transport</p>
+              <p className='text-black text-xl'>storage</p>
               </div>
-            <small className="icon text-white">© 2022 bike.All rights reserved</small>
+            
           </div>
           <div className="col">
             <div className="contract-section pt-5 ps-5">
-              <h4 className="text-white d-flex justify-content-around text-2xl">Contract Us</h4> 
-               <a className="app-store d-flex justify-content-center" target="_blank"  href=""><img className="m-1" src={logo1} alt="" /><small className='m-2 text-lg text-white text-decoration-none'>What's app</small></a>
-               <a className="app-store d-flex justify-content-center" target="_blank"  href=""><img className="m-1" src={logo2} alt="https://play.google.com/settings" /><small className='m-2 text-white text-lg'>Messenger</small></a>
-               <a className="app-store d-flex justify-content-center" target="_blank"  href=""><img className=" m-1" src={logo3} alt="https://play.google.com/settings" /><small className='m-2 text-white text-lg'>Youtube</small></a>
+              <h4 className="text-black d-flex justify-content-around text-2xl">Contract Us</h4> 
+               <a className="app-store d-flex justify-content-center" target="_blank"  href=""><img className="m-1" src={logo1} alt="" /><small className='m-2 text-lg text-black text-decoration-none'>What's app</small></a>
+               <a className="app-store d-flex justify-content-center" target="_blank"  href=""><img className="m-1" src={logo2} alt="https://play.google.com/settings" /><small className='m-2 text-black text-lg'>Messenger</small></a>
+               <a className="app-store d-flex justify-content-center" target="_blank"  href=""><img className=" m-1" src={logo3} alt="https://play.google.com/settings" /><small className='m-2 text-black text-lg'>Youtube</small></a>
             </div>
           </div>
       </div>
       </div>
+      <small className="icon text-black text-lg lg:ml-[600px]">© 2022 bike.All rights reserved</small>
         </div>
     );
 };

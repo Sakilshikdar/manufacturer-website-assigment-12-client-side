@@ -1,4 +1,3 @@
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login/Login';
 import { ToastContainer } from 'react-toastify';
@@ -46,7 +45,6 @@ function App() {
           <Route path='manageproducts' element={<ManageProduct></ManageProduct>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
-
         </Route>
       </Routes>
       <ToastContainer />

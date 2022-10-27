@@ -1,20 +1,24 @@
 .package {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: rgb(235, 235, 231);
     border-radius: 10px;
     padding: 30px;
 }
 
+.our_package{
+   background:  linear-gradient(180deg, #FFFFFF 0.09%, #C9EFF1 100%);
+}
 .offer {
     order: 1;
 }
 
+
+
 .package-img {
-    /* margin-right: 250px ; */
     order: 2;
     width: 400px;
     border-radius: 5px;
+    height: 300px;
 }
 
 @media screen and (max-width: 576px) {
@@ -22,7 +26,6 @@
         order: 2;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        /* margin-left: 25px; */
         padding: 0;
     }
 

@@ -16,7 +16,7 @@ const CheckoutForm = ({ detail }) => {
 
     useEffect(() => {
        if(price){
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://sleepy-shore-49038.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -84,7 +84,7 @@ const CheckoutForm = ({ detail }) => {
                     detail: _id,
                     transactionId: paymentIntent.id
                 }
-                fetch(`http://localhost:5000/order/${_id}`, {
+                fetch(`https://sleepy-shore-49038.herokuapp.com/order/${_id}`, {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json',

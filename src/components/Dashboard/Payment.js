@@ -14,8 +14,7 @@ const stripePromise = loadStripe('pk_test_51L1ApHGtFiAlPX1SOAeyZRcWXuG5k70O4OXUe
 const Payment = () => {
     const [user] = useAuthState(auth)
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
-    // console.log(url);
+    const url = `https://sleepy-shore-49038.herokuapp.com/order/${id}`;
 
     const { data: detail, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
@@ -31,17 +30,15 @@ const Payment = () => {
     return (
         <div>
             <h1>please pay for : {id}</h1>
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
-                <div class="card-body">
+            <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+                <div className="card-body">
                     <p className="text-success font-bold">Hello, {user.displayName}</p>
-                    <p className="text-success font-bold">Hello, {detail.quantity}</p>
-                    <p className="text-success font-bold">pay , {detail.price}</p>
-                    {/* <h2 class="card-title">Please Pay for {detail?.service}</h2>
-                    <p>Please pay: ${detail?.price}</p> */}
+                    <p className="text-success font-bold">Quantity: {detail.quantity}</p>
+                    <p className="text-success font-bold">pay , {detail.price}$</p>
                 </div>
             </div>
-            <div class="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
-                <div class="card-body">
+            <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm detail={detail} />
                     </Elements>

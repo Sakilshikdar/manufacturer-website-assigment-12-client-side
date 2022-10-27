@@ -12,10 +12,6 @@
     border:1px solid lightgray;
     font-size: 16px;
 }
-/* .btn{
-    
-    padding: 0;
-} */
 
 @media screen and (max-width: 576px){
     .form{

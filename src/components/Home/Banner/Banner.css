@@ -1,7 +1,7 @@
 .home{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color:#007cba;
+    background:linear-gradient(180deg, #D1D2F1 0.47%, rgba(217, 217, 217, 0) 85.31%);
 }
 .details{
     order: 1;
@@ -12,6 +12,7 @@
     order: 2;
     margin-left: 150px;
     padding: 20px;
+    border-radius: 24%;
 }
 
 @media screen and (max-width: 576px) {
@@ -27,6 +28,5 @@
         order: 1;
         margin-left: 50px;
         padding: 0px;
-        /* margin: 0; */
     }
 }

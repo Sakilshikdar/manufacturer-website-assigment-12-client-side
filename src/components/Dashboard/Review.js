@@ -8,7 +8,7 @@ const Review = () => {
             name: even.target.name.value,
             ratting: even.target.ratting.value,
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://sleepy-shore-49038.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -28,13 +28,13 @@ const Review = () => {
     }
 
     return (
-        <div class=" bg-base-200">
-            <div class="hero-content flex-col lg:flex-row-reverse">
+        <div className=" bg-base-200">
+            <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='lg:ml-64'>
                     <h1 >Reviews</h1>
                 </div>
-                <div class="card  w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 mt-5'>
                             <input placeholder= 'Your name' name='name' type="text" className="input input-bordered w-full " />
                             <input name='ratting' placeholder='reviews in 1-5'   type="number" className="input input-bordered w-full " />

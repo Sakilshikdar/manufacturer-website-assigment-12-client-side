@@ -5,13 +5,13 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Order = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const { displayName, email } = user;
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://sleepy-shore-49038.herokuapp.com/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -30,8 +30,7 @@ const Order = () => {
             displayName,
             email
         }
-        console.log(booking);
-        fetch('http://localhost:5000/order', {
+        fetch('https://sleepy-shore-49038.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,19 +50,21 @@ const Order = () => {
             })
     }
 
+
+
     return (
-        <div class=" bg-base-200">
-            <div class="hero-content flex-col lg:flex-row-reverse">
+        <div className=" bg-base-200">
+            <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='lg:ml-64'>
                     <h1 className='text-2xl font-bold text-primary'>Place Your Order</h1>
                 </div>
-                <div class="card  w-full max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 mt-5'>
 
                             <div>
                                 <h1 className='text-primary font-bold mb-2'>Quantity</h1>
-                                <input name='quantity' type="number" value={product.minQuantity} className="input input-bordered w-full" />
+                                <input  name='quantity' type="number" value={product.minQuantity} className="input input-bordered w-full" />
                             </div>
 
                             <input name='name' type="text" value={user?.displayName} className="input input-bordered w-full " />

@@ -3,9 +3,8 @@ import './Product.css'
 
 const Product = ({product}) => {
     const {_id,name, img, description, price, available, minimum} = product;
-
     return (
-        <div className='service-container shadow-lg p-3 mb-5 bg-white rounded'>
+        <div  className='service-container shadow-lg p-3bg-white rounded'>
         <img className='mx-auto' style={{width:'200px'}} src={img} alt="" />
         <h2>{name}</h2>
         <p>Price: {price}$</p>

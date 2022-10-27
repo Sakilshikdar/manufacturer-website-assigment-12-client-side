@@ -19,7 +19,7 @@ const MyProfile = () => {
             email
         }
 
-        fetch(`http://localhost:5000/updateuser/${user.email}`, {
+        fetch(`https://sleepy-shore-49038.herokuapp.com/updateuser/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -39,14 +39,14 @@ const MyProfile = () => {
     }
 
     return (
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="text-center lg:text-left">
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="text-center lg:text-left">
                         <ProfileUpdate></ProfileUpdate>
                     </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div class="card-body">
-                            <div class="card-body">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <div className="card-body">
+                            <div className="card-body">
                                 <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 mt-5'>
                                     <input name='displayName' type="text" value={user.displayName} className="input input-bordered w-full " />
                                     <input name='email' type="text" value={user.email} className="input input-bordered w-full " />
