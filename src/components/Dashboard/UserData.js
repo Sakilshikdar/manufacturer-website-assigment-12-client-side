@@ -7,7 +7,7 @@ const UserData = ({ person, index, refetch }) => {
     const { email, role } = person;
     const [user] = useAuthState(auth)
     const makeAdmin = () => {
-        fetch(`https://sleepy-shore-49038.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://assigment-12-server.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

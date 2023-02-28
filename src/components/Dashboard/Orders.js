@@ -12,7 +12,7 @@ const Orders = () => {
     const [updated, setUpdated] = useState(false);
 
     useEffect(() => {
-        fetch(`https://sleepy-shore-49038.herokuapp.com/order?email=${user?.email}`, {
+        fetch(`https://assigment-12-server.onrender.com/order?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const Orders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `https://sleepy-shore-49038.herokuapp.com/items/${id}`;
+            const url = `https://assigment-12-server.onrender.com/items/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

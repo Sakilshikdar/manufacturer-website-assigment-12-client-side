@@ -4,7 +4,7 @@ import Loading from '../Share/Loading/Loading';
 import UserData from './UserData';
 
 const Users = () => {
-    const { data: persons, isLoading, refetch } = useQuery('persons', () => fetch('https://sleepy-shore-49038.herokuapp.com/user', {
+    const { data: persons, isLoading, refetch } = useQuery('persons', () => fetch('https://assigment-12-server.onrender.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

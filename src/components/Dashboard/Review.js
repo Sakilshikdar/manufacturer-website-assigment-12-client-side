@@ -8,7 +8,7 @@ const Review = () => {
             name: even.target.name.value,
             ratting: even.target.ratting.value,
         }
-        fetch('https://sleepy-shore-49038.herokuapp.com/review', {
+        fetch('https://assigment-12-server.onrender.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

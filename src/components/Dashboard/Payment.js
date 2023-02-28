@@ -14,7 +14,7 @@ const stripePromise = loadStripe('pk_test_51L1ApHGtFiAlPX1SOAeyZRcWXuG5k70O4OXUe
 const Payment = () => {
     const [user] = useAuthState(auth)
     const { id } = useParams();
-    const url = `https://sleepy-shore-49038.herokuapp.com/order/${id}`;
+    const url = `https://assigment-12-server.onrender.com/order/${id}`;
 
     const { data: detail, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

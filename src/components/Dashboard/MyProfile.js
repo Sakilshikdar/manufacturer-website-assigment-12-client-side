@@ -19,7 +19,7 @@ const MyProfile = () => {
             email
         }
 
-        fetch(`https://sleepy-shore-49038.herokuapp.com/updateuser/${user.email}`, {
+        fetch(`https://assigment-12-server.onrender.com/updateuser/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

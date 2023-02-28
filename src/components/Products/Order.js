@@ -11,7 +11,7 @@ const Order = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        const url = `https://sleepy-shore-49038.herokuapp.com/product/${id}`;
+        const url = `https://assigment-12-server.onrender.com/product/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -30,7 +30,7 @@ const Order = () => {
             displayName,
             email
         }
-        fetch('https://sleepy-shore-49038.herokuapp.com/order', {
+        fetch('https://assigment-12-server.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

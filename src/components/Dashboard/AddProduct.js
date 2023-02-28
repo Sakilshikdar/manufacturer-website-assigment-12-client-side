@@ -15,7 +15,7 @@ const AddProduct = () => {
             description : even.target.description.value
 
         }
-        fetch('https://sleepy-shore-49038.herokuapp.com/product', {
+        fetch('https://assigment-12-server.onrender.com/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
